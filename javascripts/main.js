@@ -12,7 +12,11 @@ $(function(){
     // stuff here
     return false;
   });
-
+  // event listeners
+  $(".yes").on("click", function(){
+    console.log("what?");
+    plot.details();
+  });
   
   intro();
 });
