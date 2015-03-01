@@ -1,12 +1,16 @@
 * {
   font-family: 'Oswald', sans-serif;
 }
+
 /*tablet*/
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  { 
   .container {
     
+  }
+  body {
+    height: 960px;
   }
 }
 /*desktop*/
@@ -20,8 +24,7 @@ and (min-width : 1224px) {
     height: 80%;
     margin-top: 10px;
     margin: auto;
-    border-radius: 40px;
-    border: 2px solid black;
+
   }
   
 }
@@ -36,6 +39,7 @@ nav {
   text-align: right;
 }
 .container {
+  /*gradient*/
   background: #fefcea; /* Old browsers */
   background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefcea), color-stop(100%,#f1da36)); /* Chrome,Safari4+ */
@@ -44,29 +48,52 @@ nav {
   background: -ms-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
-
-}
-h1 {
-  font-weight: 700;
-}
-
-
-h2 {
-  font-weight: 400;
+  
+  border-radius: 40px;
+  border: 2px solid black;
 }
 
 #adventure {
   margin: auto;
 }
-
+#adventure_content {
+  padding: 30px 40px;
+  font-weight: 700px;
+  font-size: 36px;
+}
+/*buttons and shit*/
+.buttons {
+  max-width: 400px;
+  margin: auto;
+}
 .button {
-  display: inline;
+ position: relative;
+ border: none;
+ display: inline-block;
+ box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2),
+       inset 0px -5px 0px 0px rgba(0,0,0,0.3),
+    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+ overflow: hidden;
+ cursor: pointer;
+ margin: 36px;
 }
-
-.button.yes {
-  background-color: green;
+.button:active {
+ box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2),
+       inset 0px -2px 0px 0px rgba(0,0,0,0.3),
+    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
+ top: 3px;
 }
-
-.button.no {
-  background-color: red;
+.button div {
+ padding: 10px 20px 12px 20px;
+ color: rgba(0,0,0,0.7);
+ text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
+}
+.button:active div {
+ padding-bottom: 9px;
+}
+.wood {
+ background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
 }
