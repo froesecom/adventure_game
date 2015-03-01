@@ -1,9 +1,50 @@
 * {
   font-family: 'Oswald', sans-serif;
 }
-
+/*tablet*/
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+  .container {
+    
+  }
+}
+/*desktop*/
+@media only screen 
+and (min-width : 1224px) {
+  html body {
+    padding-top: 20px;
+  }
+  .container {
+    max-width: 960px;
+    height: 80%;
+    margin-top: 10px;
+    margin: auto;
+    border-radius: 40px;
+    border: 2px solid black;
+  }
+  
+}
+/*ALL THE THINGS*/
 body {
-  padding: 15px 10px 15px 10px;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  border-bottom: 10px solid black;
+  padding: 10px 20px 10px 20px;
+  text-align: right;
+}
+.container {
+  background: #fefcea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefcea), color-stop(100%,#f1da36)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+
 }
 h1 {
   font-weight: 700;
