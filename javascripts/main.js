@@ -4,7 +4,7 @@ $(function(){
   
 
   function intro(){
-    $("#adventure_content").text(plot.introText);
+    $("#adventure_content").text(type(plot.intro.hello));
   }
 
   $(".intro_form").on("submit", function(){
@@ -14,8 +14,10 @@ $(function(){
   });
   // event listeners
   $(".yes").on("click", function(){
-    console.log("what?");
-    plot.details();
+    // plot.details();
+  });
+  $(".no").on("click", function(){
+    type(plot.end);
   });
   
   intro();

@@ -65,6 +65,7 @@ nav {
 .buttons {
   max-width: 400px;
   margin: auto;
+  text-align: center;
 }
 .button {
  position: relative;
@@ -87,6 +88,7 @@ nav {
  top: 3px;
 }
 .button div {
+ font-size: 28px;
  padding: 10px 20px 12px 20px;
  color: rgba(0,0,0,0.7);
  text-shadow: 1px 1px 0px rgba(255,255,255,0.4);

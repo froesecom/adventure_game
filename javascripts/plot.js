@@ -2,15 +2,19 @@ var content,
     content1;
 
 var plot = {
-  introText: function(){
-    content = "Hello. Would you like to go on an adventure?";
-    type(content);
+  "intro": {
+    "hello": "Hello. Would you like to go on an adventure?"
   },
-  details: function(){
-    content   = "Great!"
-    content1  = "What is your name?"
-    type(content);
-    setTimeout(type(content1), 1000);
-  }
+  "end": "The end."
 }
+// {
+//   introText: function(){
+//     content = "Hello. Would you like to go on an adventure?";
+//     type(content);
+//   },
+//   details: function(){
+//     content   = "Great! What is your name?"
+//     type(content);
+//   }
+// }
   

@@ -4,12 +4,9 @@ function type(string){
   $("#adventure_content").text("");
   $.each(chars, function(i){
     var l = chars.shift();
-    setTimeout(function(){printLetter(l);}, i*30);
+    setTimeout(function(){$("#adventure_content").append(l);}, i*30);
   });
   
-}
-function printLetter(letter){
-  $("#adventure_content").append(letter);
 }
 
 
