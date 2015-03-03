@@ -7,17 +7,20 @@ $(function(){
     $("#adventure_content").text(type(plot.intro.hello));
   }
 
+  function updateControls(){
+    console.log("updating controls");
+  }
+
   $(".intro_form").on("submit", function(){
     var content = $("form input:text").val();
     // stuff here
     return false;
   });
   // event listeners
-  $(".yes").on("click", function(){
-    // plot.details();
-  });
-  $(".no").on("click", function(){
-    type(plot.end);
+  $(".button").on("click", function(){
+    $path = $(this).data("next-step");
+    updateControls();
+    type(plot[$path]);
   });
   
   intro();

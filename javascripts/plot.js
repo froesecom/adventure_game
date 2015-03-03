@@ -5,6 +5,8 @@ var plot = {
   "intro": {
     "hello": "Hello. Would you like to go on an adventure?"
   },
+  "details": "What is your name?",
+  "start": "All the starts go here.",
   "end": "The end."
 }
 // {
