@@ -4,7 +4,7 @@ $(function(){
   
 
   function intro(){
-    $("#adventure_content").text(type(plot.intro.hello));
+    $("#adventure_content").text(type(plot.intro.hello.split("")));
   }
 
   function updateControls(){
@@ -20,7 +20,7 @@ $(function(){
   $(".button").on("click", function(){
     $path = $(this).data("next-step");
     updateControls();
-    type(plot[$path]);
+    type(plot[$path].split(""));
   });
   
   intro();
