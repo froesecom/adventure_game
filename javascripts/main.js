@@ -1,28 +1,45 @@
 $(function(){
-  var step = 1;
-  var name;
-  
 
-  function intro(){
-    type(plot["intro"]["1"]["content"].split(""));
-    // $("#adventure_content").text(type(plot.intro.hello.split("")));
-  }
+  var controls = {
+    update: function(){
+      console.log("updating controls");
+      //fade out all control panels
+      //refresh all controls panels
+      //build buttons in control panel if necessary
+      //show correct control panel
+    },
+    buildButtons: function(){
 
-  function updateControls(){
-    console.log("updating controls");
-  }
+    },
+    turnThePage: function(){
+      //update chapter and step
 
+    }
+  };
+
+
+  //============================
+  // event listeners
+  //============================
   $(".intro_form").on("submit", function(){
     var content = $("form input:text").val();
     // stuff here
     return false;
   });
-  // event listeners
-  $(".button").on("click", function(){
-    var $path = $(this).data("next-step");
-    type(plot[$path].split(""));
-    updateControls();
-  });
   
+  $(".button").on("click", function(){
+    //start typing next part of the story
+    update.controls();
+
+  });
+
+  //============================
+  // start the app
+  //============================
+  function intro(){
+    type(plot["intro"]["1"]["content"].split(""));
+    controls.turnThePage();
+    controls.update();
+  }
   intro();
 });

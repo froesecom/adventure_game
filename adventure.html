@@ -13,11 +13,11 @@
     <nav>
       <span class="user_name">User name</span> | <span class="character">Character
     </nav>
-    <div id="adventure">
+    <div data-chapter="intro" data-step="1" id="adventure">
       <div id="adventure_content"></div>
-      <div data-chapter="intro" data-next-chapter="details" id="controls">
-        <div class="buttons">
-          <div data-next-step="details" class="button wood yes"><div>yes</div></div> <div data-next-step="end" class="button wood no"><div>no</div></div>
+      <div id="controls">
+        <div style="display:none" class="buttons">
+          <!-- <div data-next-chapter="" data-next-step="" class="button wood"><div></div></div> --> 
         </div>
         <form data-next-step="" style="display:none" class="text_console">
           <input type="text" autofocus>
