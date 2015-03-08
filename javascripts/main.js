@@ -4,7 +4,8 @@ $(function(){
   
 
   function intro(){
-    $("#adventure_content").text(type(plot.intro.hello.split("")));
+    type(plot["intro"]["1"]["content"].split(""));
+    // $("#adventure_content").text(type(plot.intro.hello.split("")));
   }
 
   function updateControls(){
@@ -18,9 +19,9 @@ $(function(){
   });
   // event listeners
   $(".button").on("click", function(){
-    $path = $(this).data("next-step");
-    updateControls();
+    var $path = $(this).data("next-step");
     type(plot[$path].split(""));
+    updateControls();
   });
   
   intro();

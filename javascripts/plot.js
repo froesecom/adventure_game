@@ -1,22 +1,27 @@
-var content,
-    content1;
-
 var plot = {
   "intro": {
-    "hello": "Hello. Would you like to go on an adventure?"
+    "1": {
+      "content": "Hello. Would you like to go on an adventure?",
+      "buttons": ["Yes-details-1", "No-end-1"]
+    },
   },
-  "details": "What is your name?",
-  "start": "All the starts go here.",
-  "end": "The end."
-}
-// {
-//   introText: function(){
-//     content = "Hello. Would you like to go on an adventure?";
-//     type(content);
-//   },
-//   details: function(){
-//     content   = "Great! What is your name?"
-//     type(content);
-//   }
-// }
+  "details": {
+    "1": {
+      "content": "What is your name?",
+      "nextStep": "details-2"
+    },
+    "2": {
+      "content": "Choose your character",
+      "buttons": characters,
+      "special": "chooseCharacter"
+    }
+  },
+  "start": {
+    "1": "All the starts go here."
+},
+  "end": {
+    "1": "The end."
+  }
+};
+
   

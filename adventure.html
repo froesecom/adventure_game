@@ -3,6 +3,7 @@
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/mechanics.js"></script>
+  <script src="javascripts/characters.js"></script>
   <script src="javascripts/plot.js"></script>
   <script src="javascripts/main.js"></script>
 
@@ -14,11 +15,11 @@
     </nav>
     <div id="adventure">
       <div id="adventure_content"></div>
-      <div id="controls">
+      <div data-chapter="intro" data-next-chapter="details" id="controls">
         <div class="buttons">
           <div data-next-step="details" class="button wood yes"><div>yes</div></div> <div data-next-step="end" class="button wood no"><div>no</div></div>
         </div>
-        <form style="display:none" class="text_console">
+        <form data-next-step="" style="display:none" class="text_console">
           <input type="text" autofocus>
           <input type="submit">
         </form>
