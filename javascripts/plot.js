@@ -1,7 +1,10 @@
 var plot = {
   "intro": {
+    "0": {
+      "content": "Hello."
+    },
     "1": {
-      "content": "Hello. Would you like to go on an adventure?",
+      "content": "Would you like to go on an adventure?",
       "buttons": ["Yes-details-1", "No-end-1"]
     },
   },

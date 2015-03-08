@@ -1,23 +1,5 @@
 $(function(){
 
-  var controls = {
-    update: function(){
-      console.log("updating controls");
-      //fade out all control panels
-      //refresh all controls panels
-      //build buttons in control panel if necessary
-      //show correct control panel
-    },
-    buildButtons: function(){
-
-    },
-    turnThePage: function(){
-      //update chapter and step
-
-    }
-  };
-
-
   //============================
   // event listeners
   //============================
@@ -37,9 +19,11 @@ $(function(){
   // start the app
   //============================
   function intro(){
-    type(plot["intro"]["1"]["content"].split(""));
-    controls.turnThePage();
-    controls.update();
+    type(plot["intro"]["0"]["content"].split(""));
+    setTimeout(function(){
+      controls.turnThePage()
+      controls.update();
+    }, 1000);
   }
   intro();
 });
