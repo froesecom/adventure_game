@@ -9,7 +9,6 @@ var i = 0;
 //functional functions (see what I did there)
 //============================
 function type(chars){
-  // var chars = input.split("");
   $("#adventure_content").text("");
   if(chars.length >= 1 ) {
     pressKey(chars.shift(), chars);
@@ -22,6 +21,7 @@ function pressKey(char, chars){
   i ++;
   type(chars);
 }
+//================================
 var controls = {
   update: function(chapter, step){
     //fade out all control panels and empty them
@@ -58,6 +58,7 @@ var controls = {
     $adv.data("chapter", chapter);
   }
 };
+//========================================================
 var textFunctions = {
   "details-2": function(content){console.log("wtf")}
 };
