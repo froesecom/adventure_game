@@ -11,7 +11,7 @@ $(function(){
   
   $(".button").on("click", function(){
     //start typing next part of the story
-    update.controls();
+    //update.controls();
 
   });
 
@@ -19,10 +19,14 @@ $(function(){
   // start the app
   //============================
   function intro(){
-    type(plot["intro"]["0"]["content"].split(""));
+    $adv = $("#adventure");
+    var chapter = $adv.data("chapter");
+    var step = $adv.data("step");
+    
+    type(plot[chapter][step]["content"].split(""));
+    controls.update(chapter, step);
     setTimeout(function(){
-      controls.turnThePage()
-      controls.update();
+      controls.turnThePage(chapter, step)
     }, 1000);
   }
   intro();
