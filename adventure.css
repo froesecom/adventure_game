@@ -61,6 +61,12 @@ nav {
   font-weight: 700px;
   font-size: 36px;
 }
+/*text input*/
+.text_console {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
 /*buttons and shit*/
 .buttons {
   max-width: 400px;

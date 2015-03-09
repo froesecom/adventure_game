@@ -8,7 +8,7 @@ var plot = {
   "details": {
     "1": {
       "content": "What is your name?",
-      "nextStep": "details-2"
+      "text": true
     },
     "2": {
       "content": "Choose your character",

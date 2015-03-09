@@ -24,7 +24,6 @@ function pressKey(char, chars){
 }
 var controls = {
   update: function(chapter, step){
-    console.log("updating controls");
     //fade out all control panels and empty them
     $(".buttons").fadeOut(function(){
       $(this).html("");
@@ -32,17 +31,15 @@ var controls = {
     $(".text_console").fadeOut(function(){
       $(this).find("input:text").val("");
     });
-    //build buttons in control panel if necessary
+    //build/show correct inputs
     if (plot[chapter][step].buttons){
       controls.buildButtons(plot[chapter][step].buttons);
     }
-    //else if (text thingo) {
-    // textFunctions["chapter-step"]();
-    //}
-    //show correct control panel within the correct function
+    else if (plot[chapter][step].text) {
+      $(".text_console").fadeIn();
+    }
   },
   buildButtons: function(buttons){
-    console.log("building buttons");
     $.each(buttons, function(i, button){
       var bArray = button.split("-");
       var text = bArray[0];
@@ -62,7 +59,7 @@ var controls = {
   }
 };
 var textFunctions = {
-  "details-1": "putYourFunctionHere"
+  "details-2": function(content){console.log("wtf")}
 };
 
 
