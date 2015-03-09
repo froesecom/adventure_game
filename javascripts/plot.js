@@ -20,7 +20,9 @@ var plot = {
     "1": "All the starts go here."
 },
   "end": {
-    "1": "The end."
+    "1": {
+      "content": "The end."
+    }
   }
 };
 

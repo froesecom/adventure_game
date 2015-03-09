@@ -9,9 +9,15 @@ $(function(){
     return false;
   });
   
-  $(".button").on("click", function(){
-    //start typing next part of the story
-    //update.controls();
+  $(".buttons").on("click", ".button", function(){
+    console.log("button clicked");
+    var chapter = $(this).data("next-chapter");
+    var step = $(this).data("next-step");
+    type(plot[chapter][step]["content"].split(""));
+    controls.update(chapter, step);
+    setTimeout(function(){
+      controls.turnThePage(chapter, step)
+    }, 1000);
 
   });
 
