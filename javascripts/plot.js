@@ -12,7 +12,7 @@ var plot = {
     },
     "2": {
       "content": "Choose your character",
-      "buttons": characters,
+      "buttons": characterButtons(),
       "special": "chooseCharacter"
     }
   },

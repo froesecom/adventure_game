@@ -12,3 +12,6 @@ var characters = {
     "description": "Robot description"
   }
 };
+function characterButtons(){
+  return ["blah", "blah"]
+}
