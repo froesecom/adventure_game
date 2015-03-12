@@ -6,8 +6,6 @@ var $adv;
 var i = 0;
 
 //============================
-//functional functions (see what I did there)
-//============================
 function type(chars){
   $("#adventure_content").text("");
   if(chars.length >= 1 ) {
@@ -60,7 +58,10 @@ var controls = {
 };
 //========================================================
 var textFunctions = {
-  "details-2": function(content){console.log("wtf")}
+  "details-2": function(content){
+    //record name
+    $(".user_name").text(content);
+  }
 };
 
 
