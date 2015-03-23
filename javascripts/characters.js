@@ -12,6 +12,11 @@ var characters = {
     "description": "Robot description"
   }
 };
-function characterButtons(){
-  return ["blah", "blah"]
+function characterButtons(step){
+  var a = [];
+  $.each(characters, function(c){
+    a.push(c + "-" + step);
+  });
+  return a;
+
 }
