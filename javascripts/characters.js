@@ -21,7 +21,8 @@ function characterButtons(step){
 }
 
 function showCharacter(){
-  alert("show characters here");
+  alert("AAAAHA ZAP");
+  $("#adventure_content").append("<img class='character' style='display:none' src='witch.png'>");
 }
 
 function hideCharacter(){
