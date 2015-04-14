@@ -29,6 +29,10 @@ var controls = {
     $(".text_console").fadeOut(function(){
       $(this).find("input:text").val("");
     });
+    //run special functions if they exist
+    if (plot[chapter][step].special){  
+      plot[chapter][step].special();
+    }
     //build/show correct inputs
     if (plot[chapter][step].buttons){
       controls.buildButtons(plot[chapter][step].buttons);
@@ -43,7 +47,8 @@ var controls = {
       var text = bArray[0];
       var chapter = bArray[1];
       var step =bArray[2];
-      var button = "<div data-next-chapter='" + chapter + "' data-next-step='" + step + "' class='button wood'><div>" + text + "</div></div>";
+      var callback = bArray[3] === undefined ? "" : bArray[3]
+      var button = "<div data-next-chapter='" + chapter + "' data-next-step='" + step + "' data-callback='" + callback + "' class='button wood'><div>" + text + "</div></div>";
       setTimeout(function(){$(".buttons").append(button)}, 500);
     });
     $(".buttons").fadeIn();

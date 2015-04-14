@@ -18,5 +18,12 @@ function characterButtons(step){
     a.push(c + "-" + step);
   });
   return a;
+}
 
+function showCharacter(){
+  alert("show characters here");
+}
+
+function hideCharacter(){
+  alert("nothing to do here");
 }

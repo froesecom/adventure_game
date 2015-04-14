@@ -23,8 +23,14 @@ $(function(){
   });
   
   $(".buttons").on("click", ".button", function(){
-    var chapter = $(this).data("next-chapter");
-    var step = $(this).data("next-step");
+    //then move onto the next chapter
+    var chapter   = $(this).data("next-chapter");
+    var step      = $(this).data("next-step");
+    var callback  = $(this).data("callback");
+    if (callback.length > 0){
+      var thisFunction = window[callback];
+      thisFunction();
+    }
     type(plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
@@ -39,7 +45,7 @@ $(function(){
   function intro(){
     $adv = $("#adventure");
     var chapter = $adv.data("chapter");
-    var step = $adv.data("step");
+    var step    = $adv.data("step");
     
     type(plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);

@@ -15,12 +15,16 @@ var plot = {
       "buttons": characterButtons("details-3")
     },
     "3": {
-      "content": "All the contents here",
-      "buttons": ["Next-start-1"]
+      "content": "",
+      "buttons": ["Next-start-1-showCharacter"]
     }
   },
   "start": {
-    "1": "All the starts go here."
+    "1": {
+      "content": "All the starts go here.",
+      "special": hideCharacter,
+      "text": true
+    }
 },
   "end": {
     "1": {
