@@ -44,14 +44,13 @@ var controls = {
       var chapter = bArray[1];
       var step =bArray[2];
       var button = "<div data-next-chapter='" + chapter + "' data-next-step='" + step + "' class='button wood'><div>" + text + "</div></div>";
-      $(".buttons").append(button);
+      setTimeout(function(){$(".buttons").append(button)}, 500);
     });
     $(".buttons").fadeIn();
   },
   turnThePage: function(chapter, step){
     //update chapter and step
     // if chapter and step passed in from buttons/text input, update them.
-    // else, assume it is a step with no controls, and simply increment the step.
     $adv.data("step", step + 1);
     $adv.data("chapter", chapter);
   }
