@@ -27,9 +27,10 @@ $(function(){
     var chapter   = $(this).data("next-chapter");
     var step      = $(this).data("next-step");
     var callback  = $(this).data("callback");
+    var choice    = $(this).text();
     if (callback.length > 0){
       var thisFunction = window[callback];
-      thisFunction();
+      thisFunction(choice);
     }
     type(plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);

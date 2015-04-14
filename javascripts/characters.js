@@ -20,8 +20,13 @@ function characterButtons(step){
   return a;
 }
 
+function updateCharacter(character){
+  alert("dank");
+  //append character to nav so we can get it later in showCharacter
+  //also add image there
+}
+
 function showCharacter(){
-  alert("AAAAHA ZAP");
   $("#adventure_content").append("<img class='character' style='display:none' src='witch.png'>");
 }
 
