@@ -11,12 +11,13 @@ var plot = {
       "text": true
     },
     "2": {
-      "content": "Choose your character",
+      "content": "Choose your character:",
       "buttons": characterButtons("details-3-updateCharacter")
     },
     "3": {
       "content": "",
-      "buttons": ["Next-start-1-showCharacter"]
+      "special": showCharacter,
+      "buttons": ["Next-start-1"]
     }
   },
   "start": {

@@ -3,22 +3,19 @@
 //global variables
 //============================
 var $adv;
-var i = 0;
+// var i = 0;
 
 //============================
 function type(chars){
-  $("#adventure_content").text("");
+  var char = chars.shift();
+  var timeout = char.search(/[!,.:;?]/) < 0 ? 60 : 800;
+  $("#adventure_content").append(char);
+
   if(chars.length >= 1 ) {
-    pressKey(chars.shift(), chars);
-  } else {
-    i = 0;
-  }
-}
-function pressKey(char, chars){
-  setTimeout(function(){$("#adventure_content").append(char);}, i * 30);
-  i ++;
-  type(chars);
-}
+    setTimeout(function(){type(chars)}, timeout);
+  }; 
+};
+
 //================================
 var controls = {
   update: function(chapter, step){

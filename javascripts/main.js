@@ -9,6 +9,7 @@ $(function(){
     var chapter = $adv.data("chapter");
     var step = $adv.data("step");
     textFunctions[chapter + "-" + step](content);
+    $("#adventure_content").text("");
     type(plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
@@ -32,6 +33,7 @@ $(function(){
       var thisFunction = window[callback];
       thisFunction(choice);
     }
+    $("#adventure_content").text("");
     type(plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
@@ -48,6 +50,7 @@ $(function(){
     var chapter = $adv.data("chapter");
     var step    = $adv.data("step");
     
+    $("#adventure_content").text("");
     type(plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
