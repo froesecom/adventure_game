@@ -23,7 +23,6 @@ var plot = {
   "start": {
     "1": {
       "content": "All the starts go here.",
-      "special": hideCharacter,
       "text": true
     }
 },

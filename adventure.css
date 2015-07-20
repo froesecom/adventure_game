@@ -37,6 +37,7 @@ nav {
   border-bottom: 10px solid black;
   padding: 10px 20px 10px 20px;
   text-align: right;
+  overflow: auto;
 }
 .container {
   /*gradient*/
@@ -55,12 +56,29 @@ nav {
 
 #adventure {
   margin: auto;
+  min-height: 250px;
 }
 #adventure_content {
   padding: 30px 40px;
   font-weight: 700px;
   font-size: 36px;
 }
+.user_info {
+  float: right;
+  margin: 75px 15px 0 0;
+}
+.character_icon {
+  float: left;
+  height: 100px;
+  visibility: hidden;
+}
+.character_icon img {
+  height: 100%;
+}
+.character_type {
+  visibility: hidden;
+}
+
 /*text input*/
 .text_console {
   max-width: 400px;

@@ -29,7 +29,3 @@ function updateCharacter(character){
 function showCharacter(){
   $("#adventure_content").append("<img class='character' style='display:none' src='witch.png'>");
 }
-
-function hideCharacter(){
-  alert("nothing to do here");
-}
