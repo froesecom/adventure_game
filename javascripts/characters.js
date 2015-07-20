@@ -21,9 +21,14 @@ function characterButtons(step){
 }
 
 function updateCharacter(character){
-  alert("dank");
-  //append character to nav so we can get it later in showCharacter
-  //also add image there
+  $(".character_type").text("| " + character).css("visibility", "visible");
+  $(".character_icon img").attr("src", character.toLowerCase() + ".png" );
+  // $(".character_icon").css("visibility", "visible");
+
+  $('.character_icon').animate({opacity: 1}, 'slow', function(){
+    $('.character_icon').css('visibility', 'visible');
+  });
+
 }
 
 function showCharacter(){
