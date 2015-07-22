@@ -43,11 +43,12 @@ var controls = {
     });
     $(".buttons").fadeIn();
   },
-  turnThePage: function(chapter, step){
-    //update chapter and step
-    // if chapter and step passed in from buttons/text input, update them.
-    $adv.data("step", step + 1);
-    $adv.data("chapter", chapter);
+  turnThePage: function(chapter, page){
+    //update chapter and page
+    // if chapter and page passed in from buttons/text input, update them.
+    GAMESTATE.plotPosition.page    = page + 1;
+    GAMESTATE.plotPosition.chapter = chapter;
+   
   }
 };
 //========================================================

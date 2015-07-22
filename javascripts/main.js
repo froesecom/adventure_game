@@ -6,14 +6,14 @@ $(function(){
   $(".text_console").on("submit", function(e){
     e.preventDefault();
     var content = $("form input:text").val();
-    var chapter = $adv.data("chapter");
-    var step = $adv.data("step");
-    textFunctions[chapter + "-" + step](content);
+    var chapter = GAMESTATE.plotPosition.chapter;
+    var page    = GAMESTATE.plotPosition.page;
+    textFunctions[chapter + "-" + page](content);
     $("#adventure_content").text("");
-    type(GAMESTATE.plot[chapter][step]["content"].split(""));
-    controls.update(chapter, step);
+    type(GAMESTATE.plot[chapter][page]["content"].split(""));
+    controls.update(chapter, page);
     setTimeout(function(){
-      controls.turnThePage(chapter, step)
+      controls.turnThePage(chapter, page)
     }, 1000);
     //I'm confused here, not going to lie
     //have to updated the controls and
@@ -46,15 +46,14 @@ $(function(){
   // start the app
   //============================
   function intro(){
-    $adv = $("#adventure");
-    var chapter = $adv.data("chapter");
-    var step    = $adv.data("step");
+    var chapter = GAMESTATE.plotPosition.chapter;
+    var page    = GAMESTATE.plotPosition.page;
     
     $("#adventure_content").text("");
-    type(GAMESTATE.plot[chapter][step]["content"].split(""));
-    controls.update(chapter, step);
+    type(GAMESTATE.plot[chapter][page]["content"].split(""));
+    controls.update(chapter, page);
     setTimeout(function(){
-      controls.turnThePage(chapter, step)
+      controls.turnThePage(chapter, page)
     }, 1000);
   }
   intro();
