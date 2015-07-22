@@ -9,5 +9,6 @@ A text adventure game for primary school children.
 - background colour black
 - build jump to step function so debugging this bastard isn't the worst
 - think of name
+- add fav icon
 
 

@@ -6,8 +6,8 @@ $(function(){
   $(".text_console").on("submit", function(e){
     e.preventDefault();
     var content = $("form input:text").val();
-    var chapter = GAMESTATE.plotPosition.chapter;
-    var page    = GAMESTATE.plotPosition.page;
+    var chapter = GAMESTATE.plotPhase.chapter;
+    var page    = GAMESTATE.plotPhase.page;
     MECHANICS.textFunctions[chapter + "-" + page](content);
     MECHANICS.read(chapter, page);
     //I'm confused here, not going to lie
@@ -36,8 +36,8 @@ $(function(){
   // start the app
   //============================
   (function(){
-    var chapter = GAMESTATE.plotPosition.chapter;
-    var page    = GAMESTATE.plotPosition.page;
+    var chapter = GAMESTATE.plotPhase.chapter;
+    var page    = GAMESTATE.plotPhase.page;
     
     $("#adventure_content").text("");
     MECHANICS.type(GAMESTATE.plot[chapter][page]["content"].split(""));

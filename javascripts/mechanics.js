@@ -56,8 +56,8 @@ MECHANICS.controls = {
   turnThePage: function(chapter, page){
     //update chapter and page
     // if chapter and page passed in from buttons/text input, update them.
-    GAMESTATE.plotPosition.page    = page + 1;
-    GAMESTATE.plotPosition.chapter = chapter;
+    GAMESTATE.plotPhase.page    = page + 1;
+    GAMESTATE.plotPhase.chapter = chapter;
    
   }
 };
