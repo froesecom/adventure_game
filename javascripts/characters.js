@@ -15,15 +15,15 @@ GAMESTATE.characters = {
 
 };
 
-function characterButtons(step){
+function characterButtons(page){
   var a = [];
   $.each(GAMESTATE.characters, function(c){
-    a.push(c + "-" + step);
+    a.push(c + "-" + page);
   });
   return a;
 }
 
-function updateCharacter(character){
+function showCharacter(character){
   $(".character_type").text("| " + character).css("visibility", "visible");
   $(".character_icon img").attr("src", character.toLowerCase() + ".png" );
 
@@ -33,6 +33,4 @@ function updateCharacter(character){
 
 }
 
-function showCharacter(){
-  $("#adventure_content").append("<img class='character' style='display:none' src='witch.png'>");
-}
+

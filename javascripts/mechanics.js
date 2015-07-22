@@ -36,9 +36,9 @@ var controls = {
       var bArray = button.split("-");
       var text = bArray[0];
       var chapter = bArray[1];
-      var step =bArray[2];
+      var page =bArray[2];
       var callback = bArray[3] === undefined ? "" : bArray[3]
-      var button = "<div data-next-chapter='" + chapter + "' data-next-step='" + step + "' data-callback='" + callback + "' class='button wood'><div>" + text + "</div></div>";
+      var button = "<div data-next-chapter='" + chapter + "' data-next-page='" + page + "' data-callback='" + callback + "' class='button wood'><div>" + text + "</div></div>";
       setTimeout(function(){$(".buttons").append(button)}, 500);
     });
     $(".buttons").fadeIn();

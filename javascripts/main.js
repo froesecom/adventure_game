@@ -26,7 +26,7 @@ $(function(){
   $(".buttons").on("click", ".button", function(){
     //then move onto the next chapter
     var chapter   = $(this).data("next-chapter");
-    var step      = $(this).data("next-step");
+    var page      = $(this).data("next-page");
     var callback  = $(this).data("callback");
     var choice    = $(this).text();
     if (callback.length > 0){
@@ -34,10 +34,10 @@ $(function(){
       thisFunction(choice);
     }
     $("#adventure_content").text("");
-    type(GAMESTATE.plot[chapter][step]["content"].split(""));
-    controls.update(chapter, step);
+    type(GAMESTATE.plot[chapter][page]["content"].split(""));
+    controls.update(chapter, page);
     setTimeout(function(){
-      controls.turnThePage(chapter, step)
+      controls.turnThePage(chapter, page)
     }, 1000);
 
   });
