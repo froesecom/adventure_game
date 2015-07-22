@@ -1,16 +1,26 @@
-//============================
-function type(chars){
+var MECHANICS = {};
+
+MECHANICS.type = function(chars){
   var char = chars.shift();
   var timeout = char.search(/[!,.:;?]/) < 0 ? 60 : 800;
   $("#adventure_content").append(char);
 
   if(chars.length >= 1 ) {
-    setTimeout(function(){type(chars)}, timeout);
+    setTimeout(function(){MECHANICS.type(chars)}, timeout);
   }; 
 };
 
-//================================
-var controls = {
+MECHANICS.read = function(chapter, page){
+  $("#adventure_content").text("");
+  MECHANICS.type(GAMESTATE.plot[chapter][page]["content"].split(""));
+  MECHANICS.controls.update(chapter, page);
+  setTimeout(function(){
+    MECHANICS.controls.turnThePage(chapter, page)
+  }, 1000);
+};
+
+
+MECHANICS.controls = {
   update: function(chapter, step){
     //fade out all control panels and empty them
     $(".buttons").fadeOut(function(){
@@ -25,7 +35,7 @@ var controls = {
     }
     //build/show correct inputs
     if (GAMESTATE.plot[chapter][step].buttons){
-      controls.buildButtons(GAMESTATE.plot[chapter][step].buttons);
+      MECHANICS.controls.buildButtons(GAMESTATE.plot[chapter][step].buttons);
     }
     else if (GAMESTATE.plot[chapter][step].text) {
       $(".text_console").fadeIn();
@@ -52,7 +62,7 @@ var controls = {
   }
 };
 //========================================================
-var textFunctions = {
+MECHANICS.textFunctions = {
   "details-2": function(content){
     //record name
     $(".user_name").text(content);

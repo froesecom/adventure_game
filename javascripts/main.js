@@ -8,15 +8,10 @@ $(function(){
     var content = $("form input:text").val();
     var chapter = GAMESTATE.plotPosition.chapter;
     var page    = GAMESTATE.plotPosition.page;
-    textFunctions[chapter + "-" + page](content);
-    $("#adventure_content").text("");
-    type(GAMESTATE.plot[chapter][page]["content"].split(""));
-    controls.update(chapter, page);
-    setTimeout(function(){
-      controls.turnThePage(chapter, page)
-    }, 1000);
+    MECHANICS.textFunctions[chapter + "-" + page](content);
+    MECHANICS.read(chapter, page);
     //I'm confused here, not going to lie
-    //have to updated the controls and
+    //have to updated the MECHANICS.controls and
     //turnThePage(with new chapter and step from the textFunctions function)
     //but not sure if they'll work they're currently build with text function
     //sort out timing
@@ -33,28 +28,22 @@ $(function(){
       var thisFunction = window[callback];
       thisFunction(choice);
     }
-    $("#adventure_content").text("");
-    type(GAMESTATE.plot[chapter][page]["content"].split(""));
-    controls.update(chapter, page);
-    setTimeout(function(){
-      controls.turnThePage(chapter, page)
-    }, 1000);
+    MECHANICS.read(chapter, page);
 
   });
 
   //============================
   // start the app
   //============================
-  function intro(){
+  (function(){
     var chapter = GAMESTATE.plotPosition.chapter;
     var page    = GAMESTATE.plotPosition.page;
     
     $("#adventure_content").text("");
-    type(GAMESTATE.plot[chapter][page]["content"].split(""));
-    controls.update(chapter, page);
+    MECHANICS.type(GAMESTATE.plot[chapter][page]["content"].split(""));
+    MECHANICS.controls.update(chapter, page);
     setTimeout(function(){
-      controls.turnThePage(chapter, page)
+      MECHANICS.controls.turnThePage(chapter, page)
     }, 1000);
-  }
-  intro();
+  })();
 });
