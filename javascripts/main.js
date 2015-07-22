@@ -10,7 +10,7 @@ $(function(){
     var step = $adv.data("step");
     textFunctions[chapter + "-" + step](content);
     $("#adventure_content").text("");
-    type(plot[chapter][step]["content"].split(""));
+    type(GAMESTATE.plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
       controls.turnThePage(chapter, step)
@@ -34,7 +34,7 @@ $(function(){
       thisFunction(choice);
     }
     $("#adventure_content").text("");
-    type(plot[chapter][step]["content"].split(""));
+    type(GAMESTATE.plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
       controls.turnThePage(chapter, step)
@@ -51,7 +51,7 @@ $(function(){
     var step    = $adv.data("step");
     
     $("#adventure_content").text("");
-    type(plot[chapter][step]["content"].split(""));
+    type(GAMESTATE.plot[chapter][step]["content"].split(""));
     controls.update(chapter, step);
     setTimeout(function(){
       controls.turnThePage(chapter, step)

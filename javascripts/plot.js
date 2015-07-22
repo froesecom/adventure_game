@@ -1,4 +1,4 @@
-var plot = {
+GAMESTATE.plot = {
   "intro": {
     "1": {
       "content": "Hello. Would you like to go on an adventure?",
@@ -25,12 +25,13 @@ var plot = {
       "content": "All the starts go here.",
       "text": true
     }
-},
+  },
   "end": {
     "1": {
       "content": "The end."
     }
   }
+  
 };
 
   

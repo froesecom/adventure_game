@@ -1,10 +1,3 @@
-
-//============================
-//global variables
-//============================
-var $adv;
-// var i = 0;
-
 //============================
 function type(chars){
   var char = chars.shift();
@@ -27,14 +20,14 @@ var controls = {
       $(this).find("input:text").val("");
     });
     //run special functions if they exist
-    if (plot[chapter][step].special){  
-      plot[chapter][step].special();
+    if (GAMESTATE.plot[chapter][step].special){  
+      GAMESTATE.plot[chapter][step].special();
     }
     //build/show correct inputs
-    if (plot[chapter][step].buttons){
-      controls.buildButtons(plot[chapter][step].buttons);
+    if (GAMESTATE.plot[chapter][step].buttons){
+      controls.buildButtons(GAMESTATE.plot[chapter][step].buttons);
     }
-    else if (plot[chapter][step].text) {
+    else if (GAMESTATE.plot[chapter][step].text) {
       $(".text_console").fadeIn();
     }
   },
