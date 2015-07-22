@@ -1,19 +1,18 @@
 
 GAMESTATE.characters = {
-  characters: {
-    "Zombie": {
-      "description": "Zombie description"
-    },
-    "Witch": {
-      "description": "Witch description"
-    },
-    "Fairy": {
-      "description": "Fairy description"
-    },
-    "Robot": {
-      "description": "Robot description"
-    }
+  "Zombie": {
+    "description": "Zombie description"
+  },
+  "Witch": {
+    "description": "Witch description"
+  },
+  "Fairy": {
+    "description": "Fairy description"
+  },
+  "Robot": {
+    "description": "Robot description"
   }
+
 };
 
 function characterButtons(step){
