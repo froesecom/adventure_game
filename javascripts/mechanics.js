@@ -5,18 +5,22 @@ MECHANICS.type = function(chars){
   var timeout = char.search(/[!,.:;?]/) < 0 ? 60 : 800;
   $("#adventure_content").append(char);
 
-  if(chars.length >= 1 ) {
+  if(GAMESTATE.allow_typing === true && chars.length >= 1 ) {
     setTimeout(function(){MECHANICS.type(chars)}, timeout);
   }; 
 };
 
 MECHANICS.read = function(chapter, page){
-  $("#adventure_content").text("");
-  MECHANICS.type(GAMESTATE.plot[chapter][page]["content"].split(""));
-  MECHANICS.controls.update(chapter, page);
-  setTimeout(function(){
+  var prepare = function(){
+    $("#adventure_content").text("");
+    GAMESTATE.allow_typing = true;
+    MECHANICS.type(GAMESTATE.plot[chapter][page]["content"].split(""));
+    MECHANICS.controls.update(chapter, page);
     MECHANICS.controls.turnThePage(chapter, page)
-  }, 1000);
+  };
+  
+  // wait for recursive typing to finish
+  setTimeout(prepare, 500);
 };
 
 

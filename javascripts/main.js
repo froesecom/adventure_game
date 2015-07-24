@@ -5,6 +5,9 @@ $(function(){
   //============================
   $(".text_console").on("submit", function(e){
     e.preventDefault();
+    // stop any recursive typing function
+    GAMESTATE.allow_typing = false;
+
     var content = $("form input:text").val();
     var chapter = GAMESTATE.plotPhase.chapter;
     var page    = GAMESTATE.plotPhase.page;
@@ -19,6 +22,7 @@ $(function(){
   });
   
   $(".buttons").on("click", ".button", function(){
+    GAMESTATE.allow_typing = false;
     //then move onto the next chapter
     var chapter   = $(this).data("next-chapter");
     var page      = $(this).data("next-page");

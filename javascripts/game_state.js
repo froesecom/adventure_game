@@ -6,7 +6,8 @@ var GAMESTATE = {
   plotPhase: {
     chapter: "intro",
     page: "1"
-  }
+  },
+  allow_typing: true
 };
 
 
