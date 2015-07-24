@@ -46,8 +46,7 @@ $(function(){
     $("#adventure_content").text("");
     MECHANICS.type(GAMESTATE.plot[chapter][page]["content"].split(""));
     MECHANICS.controls.update(chapter, page);
-    setTimeout(function(){
-      MECHANICS.controls.turnThePage(chapter, page)
-    }, 1000);
+    MECHANICS.controls.turnThePage(chapter, page)
+   
   })();
 });
