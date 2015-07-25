@@ -28,8 +28,9 @@ $(function(){
     var page      = $(this).data("next-page");
     var callback  = $(this).data("callback");
     var choice    = $(this).text();
+
     if (callback.length > 0){
-      var thisFunction = window[callback];
+      var thisFunction = MECHANICS[callback];
       thisFunction(choice);
     }
     MECHANICS.read(chapter, page);
