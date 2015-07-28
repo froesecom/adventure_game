@@ -10,20 +10,16 @@ MECHANICS.type = function(chars){
   }; 
 };
 
-MECHANICS.processText = function(callback){
-  callback();
-};
-
-MECHANICS.read = function(chapter, page){
+MECHANICS.read = function(){
   var prepare = function(){
     $("#adventure_content").text("");
+    var chapter = GAMESTATE.plotPhase.chapter;
+    var page    = GAMESTATE.plotPhase.page;
 
     GAMESTATE.allow_typing  = true;
     var content             = MECHANICS.interpolate(GAMESTATE.plot[chapter][page]["content"]);
-    
-    MECHANICS.processText(function(){
-      MECHANICS.type(content.split(""));
-    });
+    //I may need to handle the below in a callback the interpolation doesn't finish before the type function runs
+    MECHANICS.type(content.split(""));
     
     MECHANICS.controls.update(chapter, page);
     MECHANICS.controls.turnThePage(chapter, page)
