@@ -20,7 +20,7 @@ $(function(){
         "buttons": ["Begin-#CHAR#-1"]
       }
     },
-    "robot": {
+    "Robot": {
       "1": {
         "content": "All the starts go here.",
         "text": true

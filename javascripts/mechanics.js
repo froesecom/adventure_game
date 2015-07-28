@@ -97,6 +97,10 @@ MECHANICS.showCharacter = function (character){
     $('.character_icon').css('visibility', 'visible');
   });
 
+  //update plot with character type
+  
+  GAMESTATE.plot.details["3"].buttons[0] = MECHANICS.interpolate(GAMESTATE.plot.details["3"].buttons[0]);
+
 }
 //========================================================
 //TEXT FUNCTIONS
