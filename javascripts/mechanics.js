@@ -2,7 +2,16 @@ var MECHANICS = {};
 
 MECHANICS.type = function(chars){
   var char = chars.shift();
-  var timeout = char.search(/[!,.:;?]/) < 0 ? 60 : 800;
+  var timeout;
+  
+  if (char === ","){
+    timeout = 400;
+  } else if (char.search(/[!.:;?]/) >= 0) {
+    timeout = 800;
+  } else {
+    timeout = 60;
+  }
+
   $("#adventure_content").append(char);
 
   if(GAMESTATE.allow_typing === true && chars.length >= 1 ) {

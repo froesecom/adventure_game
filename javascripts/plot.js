@@ -16,14 +16,19 @@ $(function(){
         "buttons": MECHANICS.characterButtons("details-3-showCharacter")
       },
       "3": {
-        "content": "Welcome #NAME# the #CHAR#!",
+        "content": "And so your quest begins, #NAME# the #CHAR#...",
         "buttons": ["Begin-#CHAR#-1"]
       }
     },
     "Robot": {
       "1": {
-        "content": "All the starts go here.",
-        "text": true
+        "content": "#NAME#, you are a happy robot, who works in a factory making bits and bobs.",
+        "buttons": ["Continue-Robot-2"]
+      },
+      "2": {
+        "content": "What you want more than anything is a giant pot of jelly, but first you have to finish work.",
+        "buttons": ["Continue-Robot-3"]
+
       }
     },
     "end": {
