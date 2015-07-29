@@ -97,6 +97,10 @@ MECHANICS.characterButtons = function (page){
   return a;
 }
 
+MECHANICS.randomNumber = function(min, max){
+   return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 MECHANICS.showCharacter = function (character){
   GAMESTATE.player.character = character;
   $(".character_type").text("the " + character).css("visibility", "visible");
