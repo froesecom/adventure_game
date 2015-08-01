@@ -11,9 +11,8 @@ $(function(){
     var content = $("form input:text").val();
     var chapter = GAMESTATE.plotPhase.chapter;
     var page    = GAMESTATE.plotPhase.page;
+    
     MECHANICS.textFunctions[chapter + "-" + page](content);
-    MECHANICS.read();
-   
     
   });
   

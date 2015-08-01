@@ -1,8 +1,5 @@
 $(function(){
-  var PROPS = {
-    bits: MECHANICS.randomNumber(1, 10),
-    bobs: MECHANICS.randomNumber(1, 10)
-  };
+  
 
   GAMESTATE.plot = {
     "intro": {
@@ -37,6 +34,10 @@ $(function(){
       },
       "3": {
         "content": "Finish counting bits and bobs. If you have " + PROPS.bobs + " bobs and " + PROPS.bits  + " bits, how many do you have in total?",
+        "text": true
+      },
+      "4": {
+        "content": "Great work!",
         "text": true
       }
     },

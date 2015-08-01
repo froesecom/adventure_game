@@ -1,5 +1,6 @@
 var MECHANICS = {};
 
+
 MECHANICS.type = function(chars){
   var char = chars.shift();
   var timeout;
@@ -19,7 +20,7 @@ MECHANICS.type = function(chars){
   }; 
 };
 
-MECHANICS.read = function(){
+MECHANICS.read = function(incorrectAnswer){
   var prepare = function(){
     $("#adventure_content").text("");
     var chapter = GAMESTATE.plotPhase.chapter;
@@ -27,15 +28,21 @@ MECHANICS.read = function(){
 
     GAMESTATE.allow_typing  = true;
     var content             = MECHANICS.interpolate(GAMESTATE.plot[chapter][page]["content"]);
+    if (incorrectAnswer){
+      content = incorrectAnswer + content;
+    }
     //I may need to handle the below in a callback the interpolation doesn't finish before the type function runs
     MECHANICS.type(content.split(""));
     
+    
     MECHANICS.controls.update(chapter, page);
     MECHANICS.controls.turnThePage(chapter, page)
+    
+    
   };
   
   // wait for recursive typing to finish
-  setTimeout(prepare, 500);
+  setTimeout(prepare, 800);
 };
 
 MECHANICS.interpolate = function(content){
@@ -118,11 +125,25 @@ MECHANICS.showCharacter = function (character){
 //========================================================
 //TEXT FUNCTIONS
 //========================================================
+var PROPS = {
+  bits: MECHANICS.randomNumber(1, 10),
+  bobs: MECHANICS.randomNumber(1, 10)
+};
 
 MECHANICS.textFunctions = {
   "details-2": function(content){
     GAMESTATE.player.name = content;
     $(".user_name").text(content);
+    MECHANICS.read();
+  },
+  "Robot-4": function(content){
+    var sum = parseInt(content);
+    if (sum === (PROPS.bits + PROPS.bobs)){
+      MECHANICS.read();
+    } else {
+      GAMESTATE.plotPhase.page = 3;
+      setTimeout(function(){MECHANICS.read("Sorry, try again. ")}, 50);
+    }
   }
 };
 
