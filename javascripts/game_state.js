@@ -1,11 +1,11 @@
 var GAMESTATE = {
   player: {
-    name: "fsda",
-    character: "Robot"
+    name: "",
+    character: ""
   },
   plotPhase: {
-    chapter: "Robot",
-    page: "2"
+    chapter: "intro",
+    page: "1"
   },
   allow_typing: true
 };
