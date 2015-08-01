@@ -126,8 +126,8 @@ MECHANICS.showCharacter = function (character){
 //TEXT FUNCTIONS
 //========================================================
 var PROPS = {
-  bits: MECHANICS.randomNumber(1, 10),
-  bobs: MECHANICS.randomNumber(1, 10)
+  bits: MECHANICS.randomNumber(1, 15),
+  bobs: MECHANICS.randomNumber(1, 15)
 };
 
 MECHANICS.textFunctions = {
