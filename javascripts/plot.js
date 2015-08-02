@@ -54,15 +54,24 @@ $(function(){
     },
     "6": {
       "content": "'#NAME#, I need your help to help to find a pot of jelly. Everything depends on it. Will you help?'",
-      "buttons": ["Yes-Robot-7", "No-Robot-8"]
+      "buttons": ["Yes-Robot-9", "No-Robot-7"]
     },
     "7": {
-      "content": "Text",
-      "text": true
+      "content": "The witch looks disappointed. She places a small card on the table. 'I will leave you this, incase you change your mind.' She gets up a leaves the cafe.",
+      "buttons": ["Take card-Robot-10", "Leave card-Robot-8"]
     },
     "8": {
-      "content": "Text",
-      "text": true
+      "content": "You leave the card behind, and head home.",
+      "buttons": ["Go-Robot-11"]
+    },
+    "9": {
+      "content": "Stuff she says",
+      "buttons": ["Take card-Robot-10", "Leave card-Robot-8"]
+    },
+    "10": {
+      "content": "You pick up the card. A picture of Sphinx is drawn on it, along with the word 'newspaper'.",
+      "special": function(){PROPS.witchCard = true},
+      "buttons": ["Go home-Robot-11"]
     }
   };
   GAMESTATE.plot["Zombie"] = {

@@ -122,14 +122,19 @@ MECHANICS.showCharacter = function (character){
   GAMESTATE.plot.details["3"].buttons[0] = MECHANICS.interpolate(GAMESTATE.plot.details["3"].buttons[0]);
 
 }
+
+//==============================================
+//Props
+//==============================================
+var PROPS = {
+  bits: MECHANICS.randomNumber(1, 15),
+  bobs: MECHANICS.randomNumber(1, 15),
+  witchCard: false
+};
+
 //========================================================
 //TEXT FUNCTIONS
 //========================================================
-var PROPS = {
-  bits: MECHANICS.randomNumber(1, 15),
-  bobs: MECHANICS.randomNumber(1, 15)
-};
-
 MECHANICS.textFunctions = {
   "details-2": function(content){
     GAMESTATE.player.name = content;
