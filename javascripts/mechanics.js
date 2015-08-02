@@ -10,7 +10,7 @@ MECHANICS.type = function(chars){
   } else if (char.search(/[!.:;?]/) >= 0) {
     timeout = 800;
   } else {
-    timeout = 60;
+    timeout = 40;
   }
 
   $("#adventure_content").append(char);

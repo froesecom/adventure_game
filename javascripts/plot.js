@@ -72,6 +72,10 @@ $(function(){
       "content": "You pick up the card. A picture of Sphinx is drawn on it, along with the word 'newspaper'.",
       "special": function(){PROPS.witchCard = true},
       "buttons": ["Go home-Robot-11"]
+    },
+    "11": {
+      "content": "Do some stuff at home.",
+      "text": true
     }
   };
   GAMESTATE.plot["Zombie"] = {
