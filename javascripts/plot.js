@@ -69,8 +69,8 @@ $(function(){
       "buttons": ["Take card-Robot-10", "Leave card-Robot-8"]
     },
     "10": {
-      "content": "You pick up the card. A picture of Sphinx is drawn on it, along with the word 'newspaper'.",
-      "special": function(){PROPS.witchCard = true},
+      "content": PROPS.witchCard.message,
+      "special": function(){PROPS.witchCard.obtained = true},
       "buttons": ["Go home-Robot-11"]
     },
     "11": {

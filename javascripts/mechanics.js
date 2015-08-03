@@ -31,7 +31,7 @@ MECHANICS.read = function(incorrectAnswer){
     if (incorrectAnswer){
       content = incorrectAnswer + content;
     }
-    //I may need to handle the below in a callback the interpolation doesn't finish before the type function runs
+    //I may need to handle the below in a callback if the interpolation doesn't finish before the type function runs
     MECHANICS.type(content.split(""));
     
     
@@ -85,8 +85,7 @@ MECHANICS.controls = {
     $(".buttons").fadeIn();
   },
   turnThePage: function(chapter, page){
-    //update chapter and page
-    // if chapter and page passed in from buttons/text input, update them.
+    
     GAMESTATE.plotPhase.page    = page + 1;
     GAMESTATE.plotPhase.chapter = chapter;
    
@@ -129,7 +128,10 @@ MECHANICS.showCharacter = function (character){
 var PROPS = {
   bits: MECHANICS.randomNumber(1, 15),
   bobs: MECHANICS.randomNumber(1, 15),
-  witchCard: false
+  witchCard: {
+    obtained: false,
+    message: "You pick up the card. A picture of Sphinx is drawn on it, along with the word 'newspaper'."
+  }
 };
 
 //========================================================
